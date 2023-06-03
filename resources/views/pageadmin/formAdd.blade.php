@@ -9,7 +9,7 @@
     <div class="space50">&nbsp;</div>
     @include('error')
     <div class="container">
-        <form action="admin-add-form" method="post" enctype="multipart/form-data">
+        <form action="/admin-add/" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for='inputName'>Name</label>

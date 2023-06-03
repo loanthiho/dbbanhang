@@ -75,20 +75,20 @@ class PageController extends Controller
         $product->new = $request->inputNew;
         $product->id_type = $request->inputType;
         $product->save();
-        return $this->getIndexAdmin();
+        return redirect('/admin');
     }
     public function getAdminEdit($id)
     {
         $product = products::find($id);
         return view('pageadmin.formEdit')->with('product', $product);
     }
-    public function postAdmiEdit(Request $request)
+    public function postAdminEdit(Request $request)
     {
         $id = $request->editId;
         $product = products::find($id);
         if ($request->hasFile('editImage')) {
             $file = $request->file('editImage');
-            $fileName = $file->getClientOriginalName('editImage');
+            $fileName = $file->getClientOriginalName();
             $file->move('source/image/product', $fileName);
         }
 
@@ -104,13 +104,15 @@ class PageController extends Controller
         $product->new = $request->editNew;
         $product->id_type = $request->editType;
         $product->save();
-        return $this->getIndexAdmin();
+        return redirect('/admin');
+
+       
     }
 
-
-    public function getAdminDelete($id)
+    public function postAdminDelete($id)
     {
-        $product = products::find($id);
-        return view('pageadmin.formEdit')->with('product', $product);
+      $products = products::find($id);
+      $products->delete();
+      return $this->getIndexAdmin();  
     }
 }

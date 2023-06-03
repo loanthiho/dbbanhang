@@ -62,13 +62,14 @@ Route::get('/loan1/{id}',[PageController::class,'getLoaiSp']);
 Route::get('/loan2/{id}',[PageController::class,'getDetail']);
 
 Route::get('/admin', [PageController::class, 'getIndexAdmin']);												
-Route::get('/admin-add-form', [PageController::class, 'getAdminAdd'])->name('add-product');															
-// Route::post('/admin-add', [PageController::class,'postAdminAdd']);											
+Route::get('/admin-add', [PageController::class, 'getAdminAdd'])->name('add-product');															
+Route::post('/admin-add', [PageController::class,'postAdminAdd']);											
 													
-Route::get('/admin-edit-form/{id}', [PageController::class, 'getAdminEdit']);													
-// Route::post('/admin-edit', [PageController::class, 'postAdminEdit']);
+Route::get('/admin-edit/{id}', [PageController::class, 'getAdminEdit']);													
+Route::post('/admin-edit/{id}', [PageController::class, 'postAdminEdit']);
 
-Route::get('/admin-delete/{id}', [PageController::class, 'postAdminDelete']);															
+Route::post('/admin-delete/{id}', [PageController::class, 'postAdminDelete']);	
+Route::get('/admin-export', [PageController::class, 'exportAdminProduct'])->name('export');														
 
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');

@@ -11,7 +11,6 @@
     <div class="container">
         <form action="admin-edit" method="POST" enctype="multipart/form-data">
             @csrf
-
             <div class="form-group">
                 <label for='editName'>ID</label>
                 <input type="number" class="form-control" name="editId" value="{{$product->id}}" readonly>

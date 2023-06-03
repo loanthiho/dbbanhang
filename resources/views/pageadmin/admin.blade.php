@@ -31,7 +31,7 @@
                 <th scope="col">Promotion_price</th>
                 <th scope="col">Unit</th>
                 <th scope="col">New</th>
-                <th scope="col"><a href="{{route('add-product')}}" class="btn btn-primary" style="width:80px;">Add</a></th>
+                <th scope="col"><a href="/admin-add/" class="btn btn-primary" style="width:80px;">Add</a></th>
             </tr>
         </thead>
         <tbody>
@@ -40,7 +40,7 @@
 
                 <th scope="row">{{$product->id}}</th>
 
-                <th><img src="source/image/product/{{$product->image}}" alt="image" style="height: 100px;" /></th>
+                <th><img src="/source/image/product/{{$product->image}}" alt="image" style="height: 100px;" /></th>
 
                 <td>{{$product->name}}</td>
 
@@ -58,9 +58,9 @@
 
                 <td>
 
-                    <a href='admin-edit-form/{{$product->id}}' type="submit" class="btn btn-warning" style="width:80px;">Edit</a>
+                    <a href='admin-edit/{{$product->id}}' type="submit" class="btn btn-warning" style="width:80px;">Edit</a>
 
-                    <form role="form" action="admin-delete/{{$product->id}}" method="post">
+                    <form role="form" action="admin-delete/{{$product->id}}" method="POST">
 
                         @csrf
 
