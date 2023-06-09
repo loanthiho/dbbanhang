@@ -74,6 +74,10 @@ Route::get('/admin-export', [PageController::class, 'exportAdminProduct'])->name
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
+Route::get('/register', function () {		
+	return view('users.register');		
+	});		
+
 
 Route::get('/tinhtich/{a}/{b}', function ($a,$b) {
     echo $a*$b;exit;
