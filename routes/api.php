@@ -31,4 +31,11 @@ Route::put('/edit-product/{id}', [APIController::class, 'editProduct']);
 
 Route::post('/upload-image', [APIController::class, 'uploadImage']);
 
-Route::get('/get-product1', [TIKIController::class, 'getProducts']);
+
+Route::get('/get-Tiki',[TikiController::class,'getTiki']);	
+
+Route::get('/get-Tiki/{id}', [TikiController::class,'getOneTiki']);	
+	
+Route::post('/add-Tiki',[TikiController::class,'addTiki']);
+Route::delete('/delete-Tiki/{id}',[TikiController::class,'deleteTiki']);		
+Route::put('/edit-Tiki/{id}',[TikiController::class,'editTiki']);

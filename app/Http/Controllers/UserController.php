@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
@@ -49,6 +50,19 @@ class UserController extends Controller
         return view('api-data', ['data' => $data]);
     }
 
-    
+    public function Register(Request $request)  {
+        $input=$request->validate([
+            'name'=>'required|string',
+            'email'=>'required|email|unique:users',
+            'password'=>'required',
+            'c_password'=>'required|same:password',
+        ]);
+        $input['password']=bcrypt($input['password']);
+        User::create($input);
+
+        echo
+        
+        
+    }
 
 }

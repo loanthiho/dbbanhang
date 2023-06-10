@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tiki extends Model
 {
-    use HasFactory;
+
     protected $table="tiki";
+    use HasFactory;
 }
