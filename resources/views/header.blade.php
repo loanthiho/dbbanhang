@@ -9,8 +9,8 @@
 			</div>
 			<div class="pull-right auto-width-right">
 				<ul class="top-details menu-beta l-inline">
-					@if(Session::has('user'))
-					<li><a href="logout"><i class="fa fa-user"></i>{{Session('user')->name}}</a></li>
+					@if(Session::has('users'))
+					<li><a href="logout"><i class="fa fa-user"></i>{{Session('users')->name}}</a></li>
 					@else
 					<li><a href="register">Đăng kí</a></li>
 					<li><a href="login">Đăng nhập</a></li>
